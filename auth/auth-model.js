@@ -9,17 +9,24 @@ module.exports = {
 //Used for Registration ----> Add User
 
 function findById(id) {
-    return null
-}
+    return db ('users')
+            .where({ id })
+            .first()
+};
 
 function add(user) {
     return db('users')
-        .insert(user, 'id');
-}
+        .insert(user, 'id')
+        .then(ids => {
+            const [id] = ids;
+            return findById(id);
+        });
+};
 
-function findBy(id) {
-    return null
-}
+function findBy(filter) {
+    return db('users')
+        .where(filter);
+};
 
 
 
