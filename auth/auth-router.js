@@ -3,8 +3,10 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const secrets = require('../config/secrets');
 
+
+//registration
 router.post('/register', (req, res) => {
-  // implement registration
+  let user = re
 });
 
 router.post('/login', (req, res) => {
